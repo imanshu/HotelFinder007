@@ -47,6 +47,14 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 .onDefault((session) => {
     session.send('Sorry, I did not understand \'%s\'.', session.message.text);
 });
+bot.dialog('Greeting', function (session, args, next) {
+	session.send('welcome to the hotel finder ');
+
+	var greetWord = builder.EntityRecognizer.findEntity(args.intent.entities, 'greet');
+	session.send('greeting entity  %s:', greetWord.entity);
+}).triggerAction({
+	matches: 'Greeting'
+});
 
 bot.dialog('/', intents);    
 
