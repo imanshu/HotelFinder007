@@ -111,7 +111,7 @@ bot.dialog('SearchHotels', [
 
                 // End
                 session.endDialog();
-            });
+            });   
     }
 ]).triggerAction({
     matches: 'SearchHotels',
