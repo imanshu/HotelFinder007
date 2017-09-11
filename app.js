@@ -39,7 +39,7 @@ var luisAPIKey = process.env.LuisAPIKey;
 var luisAPIHostName = process.env.LuisAPIHostName || 'westus.api.cognitive.microsoft.com';
 
 const LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v1/application?id=' + luisAppId + '&subscription-key=' + luisAPIKey;
-
+const LuisModelUrl = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/f2b7a0f7-29be-4f63-8982-dd248d2385ef?subscription-key=35fa249ef1794ee1970ae2b849323717&timezoneOffset=0&verbose=true';
 // Main dialog with LUIS
 var recognizer = new builder.LuisRecognizer(LuisModelUrl);
 var intents = new builder.IntentDialog({ recognizers: [recognizer] })
